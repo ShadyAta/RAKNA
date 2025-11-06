@@ -107,15 +107,18 @@ body {
 }
 
 .hero {
-  min-height: 52vh;
+  min-height: 100vh; 
   display: flex;
   align-items: center;
+  justify-content: center; 
   position: relative;
   background-image:
     linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.85)),
-    url('https://images.pexels.com/photos/3612569/pexels-photo-3612569.jpeg?auto=compress&cs=tinysrgb&w=1600');
-  background-size: cover;
-  background-position: center;
+    url('Rakna.jpg');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
   color: #f0f7ff;
   padding: 60px 0;
 }
@@ -480,3 +483,4 @@ body {
     justify-content: center;
   }
 }
+
