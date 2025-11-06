@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RAKNA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <div class="brand">
+        <span>RAKNA</span>
+      </div>
+      <nav class="nav">
+        <a href="booking.html" class="btn btn-ghost">Book Now</a>
+        <a href="admin.html" class="btn">Admin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="hero-overlay"></div>
+    <div class="wrap hero-content">
+      <h1>Effortless parking. Fast booking.</h1>
+      <p class="lead">Find, reserve and manage parking spaces with a clean, professional interface.</p>
+      <div class="hero-cta">
+        <a href="booking.html" class="btn btn-cta">Reserve a Space</a>
+        <a href="admin.html" class="btn btn-white">Dashboard</a>
+      </div>
+    </div>
+  </main>
+
+  <section class="features wrap">
+    <article>
+      <h3>Realistic garage view</h3>
+      <p>Subtle photographic texture and lighting give a professional parking atmosphere.</p>
+    </article>
+    <article>
+      <h3>Secure local storage</h3>
+      <p>All reservations are stored on the device using localStorage—no server required.</p>
+    </article>
+    <article>
+      <h3>Admin tools</h3>
+      <p>Export, cancel or clear reservations from a lightweight administrative dashboard.</p>
+    </article>
+  </section>
+
+ <footer class="site-footer">
+  <div class="wrap footer-content">
+    <div class="footer-brand">
+
+      <span>RAKNA</span>
+    </div>
+
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="booking.html">Booking</a>
+      <a href="admin.html">Admin</a>
+    </div>
+
+    <div class="footer-social">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <small>© <span id="year"></span> Smart Parking. All rights reserved.</small>
+  </div>
+</footer>
+
+<!-- Font Awesome icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

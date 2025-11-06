@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RAKNA — Booking</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page">
+  <header class="site-header">
+    <div class="wrap">
+      <div class="brand"><span>RAKNA</span></div>
+      <nav class="nav">
+        <a href="index.html" class="btn btn-ghost">Home</a>
+        <a href="admin.html" class="btn">Admin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap main">
+    <section class="controls-row">
+      <div class="left">
+        <label>Slots
+          <input id="slot-count" type="number" min="4" max="36" value="12" />
+        </label>
+        <button id="apply-count" class="btn">Apply</button>
+        <button id="reset-all" class="btn btn-ghost">Reset All</button>
+      </div>
+      <div class="right">
+        <div class="legend">
+          <span><i class="dot available"></i> Available</span>
+          <span><i class="dot booked"></i> Booked</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="parking-grid" class="grid realistic">
+      <!-- slots inserted by JS -->
+    </section>
+  </main>
+
+  <!-- Booking Modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+      <h2 id="modal-title">Book Slot</h2>
+
+      <form id="booking-form" class="form">
+        <div class="field">
+          <label for="name">Full name</label>
+          <input id="name" type="text" required placeholder="Your name">
+        </div>
+
+        <div class="field">
+          <label for="start">Start (local time)</label>
+          <input id="start" type="datetime-local" required>
+        </div>
+
+        <div class="field">
+          <label for="hours">Duration (hours)</label>
+          <input id="hours" type="number" min="1" max="24" value="1" required>
+        </div>
+
+        <input type="hidden" id="slot-id">
+
+        <div class="actions">
+          <button type="submit" class="btn btn-cta">Confirm Booking</button>
+          <button type="button" id="cancel-btn" class="btn btn-ghost">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

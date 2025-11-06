@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RAKNA — Admin</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .admin-panel{padding:18px;background:var(--card);border-radius:12px;box-shadow:var(--shadow);margin-top:18px}
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:10px;border-bottom:1px solid #eef6ff;text-align:left}
+    th{color:var(--muted);font-weight:600}
+    .small{font-size:13px;color:var(--muted)}
+    .action-btn{padding:6px 8px;border-radius:8px;border:1px solid #e6eefc;background:#fff;cursor:pointer}
+  </style>
+</head>
+<body class="page">
+  <header class="site-header">
+    <div class="wrap">
+      <div class="brand"><span>RAKNA</span></div>
+      <nav class="nav">
+        <a href="index.html" class="btn btn-ghost">Home</a>
+        <a href="booking.html" class="btn">Booking</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap main">
+    <section class="admin-panel">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+        <div>
+          <strong>Slots:</strong> <span id="admin-slots">—</span>
+          <span class="small"> | Reservations: <span id="admin-count">0</span></span>
+        </div>
+        <div>
+          <button id="export-json" style="display:none;" class="action-btn">Export JSON</button>
+          <button id="clear-all" class="action-btn" style="border-color:#ffd1d1">Clear All</button>
+        </div>
+      </div>
+
+      <div id="bookings-list" style="margin-top:12px"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+  <script>
+    // small helper to render admin UI after app.js loads functions
+    window.addEventListener('load', ()=> {
+      renderAdmin();
+      document.getElementById('export-json').addEventListener('click', exportData);
+      document.getElementById('clear-all').addEventListener('click', () => {
+        if(!confirm('Delete all reservations?')) return;
+        clearAll();
+        renderAdmin();
+        alert('All reservations cleared.');
+      });
+    });
+  </script>
+</body>
+</html>
